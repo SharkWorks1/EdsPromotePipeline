@@ -4,6 +4,13 @@ ${TOTALTEST_JOBCARD}
 //*** THE JOB CARD MUST INCLUDE A NOTIFY STATEMENT SUCH 
 //*** AS NOTIFY=&SYSUID and also a REGION=0M parameter
 //*
+//*
+//*   SWAP DATE
+//*
+//XCHANGE EXEC PGM=XGCBATCH,
+// PARM='DATE=2020/02/29,TIME=02:59:59,SUBSYS=MXG1,STEP=RUNNER'
+//STEPLIB DD DISP=SHR,DSN=SYS2.CW.XGR17Y.SLXGLOAD
+//SYSPRINT DD SYSOUT=*
 //********************************************************************
 //* Execute Target Runner
 //********************************************************************
@@ -23,9 +30,11 @@ ${TOTALTEST_JOBCARD}
 //* loadlib containing the COBOL runtime(CEE.SCEERUN), otherwise 
 //* it can be removed.
 //*
-//STEPLIB DD DISP=SHR,DSN=CPWR.MLCXnnn.SLCXLOAD
+//STEPLIB DD DISP=SHR,DSN=SYS2.CW.&CWGACX..SLCXLOAD
 //*  where MLCXnnn is MLCX170 OR HIGHER
-//        DD DISP=SHR,DSN=<ADD LOADLIB CONTAINING COBOL TEST PROGRAM>
+//        DD DISP=SHR,DSN=SALESSUP.ELG1.FIX.LOAD
+//        DD DISP=SHR,DSN=SALESSUP.ELG1.EMR.LOAD
+//        DD DISP=SHR,DSN=SALESSUP.ELG1.PRD.LOAD
 //*       DD DISP=SHR,DSN=<COBOL RUNTIME LOADLIB>
 //*
 //* The following lines will initialize storage to zeroes to avoid 
