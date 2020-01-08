@@ -9,7 +9,7 @@ ${TOTALTEST_JOBCARD}
 //********************************************************************
 //RUNNER EXEC PGM=TTTRUNNR
 //*
-//* You need to modify the following DD statements.
+//* You need to modify the following DD statements. elg
 //*
 //* The first DD statement should be changed to the ECC SLCXLOAD 
 //* dataset that contains the Topaz for Total Test TTTRUNNR program.
